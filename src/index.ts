@@ -105,6 +105,8 @@ interface IRepo {
     return [...prev, line.join(' ')];
   }, [] as string[]);
 
+  lines.push(`Updated ${(new Date()).toLocaleString()}`.padStart(43))
+
   /**
    * Finally, write into gist
    */
@@ -123,8 +125,8 @@ interface IRepo {
       [filename]: {
         filename:
           morning + daytime > evening + night
-            ? "I'm an early 🐤"
-            : "I'm a night 🦉",
+            ? "Qingqi is an early 🐤"
+            : "Qingqi is a night 🦉",
         content: lines.join('\n'),
       },
     },
